@@ -1,0 +1,58 @@
+Part 1 : Set the scene
+
+mkdir git-github-and-terminal
+cd git-github-and-terminal
+
+1. mkdir death_star
+   cd death_star
+   touch darth_vader.txt princess_leia.txt storm_trooper.txt 
+2. cd ..
+ mkdir tatooine
+ cd tatooine
+ touch luke.txt ben_kenobi.txt
+3.cd tatooine/ && mkdir millenium_falcon && cd millenium_falcon
+touch han_solo.txt chewbaca.txt
+
+Part 2: mv - rename
+4.  mv ben_kenobi.txt obi_wan.txt
+
+Part 3: cp - copy
+5.  cd ..
+    cp ./death_star/storm_trooper.txt ./tatooine/  
+
+Part 4: mv - move
+6.  mv obi_wan.txt luke.txt ./millenium_falcon/
+    cd ..
+7.  mv millenium_falcon/ ~/Desktop/git-github-and-terminal/galaxy-far-far-away/
+8.  mv millenium_falcon/ ./death_star/
+    cd death_star
+9.  mv princess_leia.txt ./millenium_falcon/
+
+
+Part 5: rm - remove
+    cd millenium_falcon
+10.  rm obi_wan.txt 
+
+Part 6: All together
+11.  cd ../.. && mkdir yavin_4
+12.  mv death_star/millenium_falcon/ yavin_4/
+13.  cd yavin_4/ && mkdir x_wing
+14.  mv ./millenium_falcon/princess_leia.txt .
+     mv ./millenium_falcon/luke.txt ./x_wing/
+15.  mv ./millenium_falcon/ ./x_wing/ ..
+16.  cd death_star/
+     mkdir tie_fighter_1 tie_fighter_2 tie_fighter_3
+17.  mv darth_vader.txt ./tie_fighter_1
+18.  cp storm_trooper.txt ./tie_fighter_2
+     cp storm_trooper.txt ./tie_fighter_3
+19.  cd death_star
+     mv t* ../
+
+Part 7: rm -r : remove all directories and everything they contain
+20.  rm -r tie_fighter_2 tie_fighter_3
+
+Part 8: 
+21. cd x_wing/ && touch the_force.txt
+22. cd ..
+    rm -r death_star
+23. mv x_wing/ millenium_falcon/ ./yavin_4/
