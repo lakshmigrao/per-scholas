@@ -75,25 +75,6 @@ mainDiv.innerHTML +=  newDiv.outerHTML
 let quoteTitle = document.querySelector('#quote-title')
 quoteTitle.addEventListener('click',randomQuote)
   // Part 9
-
-// let allBlogPosts = document.querySelectorAll(".blog-post")
-// allBlogPosts.forEach((item) => {
-//   item.addEventListener('mouseout',mouseoutFn)
-//   item.addEventListener('mouseenter',mouseinFn)
-// })
-
-// function mouseoutFn(evt){
-//   evt.target.classList.toggle('purple')
-// }
-// function mouseinFn(evt){
-//   evt.target.classList.toggle('red')
-// }
-
-// });
-//   // Part 8
-// let quoteTitle = document.querySelector('#quote-title')
-// quoteTitle.addEventListener('click', randomQuote)
-  // Part 9
 let blogPost = document.querySelectorAll('.blog-post'); // 
 blogPost.forEach((element) => {
   element.addEventListener('mouseout', function(){  
