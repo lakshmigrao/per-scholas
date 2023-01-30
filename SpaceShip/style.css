@@ -1,0 +1,22 @@
+
+body{
+  /* display: grid;  */
+  /* justify-content: space-around;
+  align-items: center; */
+}
+.container{
+    /* display:flex; */
+}
+.playerShip{
+    /* color: blue; */
+    /* flex-direction: column; */
+}
+.alienShip{
+    /* color: red; */
+   /* flex-direction: column; */
+}
+/* .flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }*/
