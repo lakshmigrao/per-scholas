@@ -42,3 +42,13 @@ module.exports.create = async (req,res) => {
     }
     res.redirect('/logs')
 }
+
+module.exports.delete = async (req, res) => {
+    try {
+        await Logs.findByIdAndDelete(req.params.id)
+        res.redirect('/logs')
+    } catch (err) {
+        console.log(err)
+        res.send(err.message)
+    }
+}

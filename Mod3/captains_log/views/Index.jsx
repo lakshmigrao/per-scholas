@@ -3,7 +3,9 @@ import React from "react";
 function Index(props){
 
     return(
-        <div>Index View
+        <div>
+            <h1>Index View</h1>
+            <br/><br/>
         {props.logs.map((item,index) => 
 
             <li key={index}>
