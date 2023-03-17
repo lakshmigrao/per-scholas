@@ -17,11 +17,15 @@ app.set('view engine','jsx')
 app.engine('jsx', createEngine())
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
+app.use(express.static('public'))
 
 const captainRoutes = require('./routes/captainRoutes') 
-
+const foodLogRoutes = require('./routes/foodLogRoutes')
+app.get('/',(req,res)=>{
+    res.render('Home')
+})
 app.use('/logs',captainRoutes)
-
+app.use('/foodlogs',foodLogRoutes)
 
 app.listen(PORT,()=>{
     console.log('Listening at the port : '+PORT)
