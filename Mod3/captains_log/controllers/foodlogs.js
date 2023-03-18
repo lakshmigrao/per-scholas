@@ -1,5 +1,5 @@
-const { deleteMany } = require('../models/captainModel')
 const FoodLogs = require('../models/foodLogsModel')
+const Comment = require('../models/commentsModel')
 const Food = require('../models/foodLogsData')
 
 module.exports.index=async(req,res) => {
@@ -40,7 +40,8 @@ module.exports.create = async (req,res) => {
 
 module.exports.show = async (req,res) => {
     try{
-        const foodLogData = await FoodLogs.findById(req.params.id)
+        const foodLogData = await FoodLogs.findById(req.params.id).populate('comments')
+        console.log(foodLogData)
         res.render('foodlogs/Show',{foodlog : foodLogData})
     }catch(err){
         console.log(err)
@@ -113,9 +114,41 @@ module.exports.seed = async (req,res) => {
 module.exports.clear = async (req, res) => {
     try {
         await FoodLogs.deleteMany({})
+        await Comment.deleteMany({})
         res.redirect('/foodlogs')
     } catch (err) {
         console.log(err)
         res.send(err.message)
     }
 }
+
+module.exports.createComment = async(req,res) => {
+    const commentOne = { 
+        username : req.body.username,
+        text : req.body.text,
+        createdAt : Date.now()
+    }
+   try{
+     const commentData = await Comment.create(commentOne)
+     console.log("FoodLogs Comment created")
+     try{
+        await FoodLogs.findByIdAndUpdate(
+            req.params.id,
+            {$push:{comments : commentData._id}},
+            {new:true, useFindAndModify : false}
+        )
+            res.redirect(`/foodlogs/${req.params.id}`)
+
+     }catch(err){
+        console.log(err)
+    res.send(err.message)
+     }
+   }catch(err){
+    console.log(err)
+    res.send(err.message)
+}
+   }
+
+//    module.exports.addComment = async(req,res) => {
+//     res.render(`foodlogs/AddComment`)
+//    }

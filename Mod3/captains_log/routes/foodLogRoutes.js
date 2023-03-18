@@ -13,6 +13,7 @@ router.post('/',foodLogsController.create)
 router.get('/:id/edit',foodLogsController.edit)
 router.get('/:id',foodLogsController.show)
 router.post('/seed',foodLogsController.seed)
+router.post('/:id/comment',foodLogsController.createComment)
 //router.post('/updatetimestamps',foodLogsController.updateTimestamps)
 
 

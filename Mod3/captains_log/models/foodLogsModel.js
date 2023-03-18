@@ -1,3 +1,5 @@
+const Comment = require('./commentsModel')
+
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
@@ -5,7 +7,13 @@ const Schema = mongoose.Schema
 const FoodLogSchema = new Schema({
     title:{type:String, required :true},
     ingredients:{type:String, required :true},
-    isHealthy:{type: Boolean,default :true}
+    isHealthy:{type: Boolean,default :true},
+    comments : [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref : "Comment"
+        }
+    ]
 },
 {timestamps : true})
 

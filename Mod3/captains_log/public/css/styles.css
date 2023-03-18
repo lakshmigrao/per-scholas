@@ -1,6 +1,6 @@
 body {
     background-color: burlywood;
-    margin-left: 100px;
+    margin-left: 50px;
 
 
 }
@@ -34,10 +34,42 @@ body {
     
 
 }
+.containerC {
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 15%;
+
+    /* display: flex;
+    flex-wrap: row-wrap; */
+
+}
+.containerD {
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 15%;
+
+    /* display: flex;
+    flex-wrap: row-wrap; */
+
+}
+span{
+    font-style: italic;
+    color : blue
+}
+
 
 .defaultLayout {
     display: flex;
     flex-wrap: row-wrap;
+    margin-left: 0px;
 }
 
 nav {

@@ -5,8 +5,9 @@ function Index(props){
 
     return(
         <DefaultLayout>
-        <div className="defaultLayout">
             <h1>INDEX VIEW FOOD LOGS</h1>
+        <div className="defaultLayout">
+            
             <br/><br/><br/>
             <div className="containerA">
             <ul>

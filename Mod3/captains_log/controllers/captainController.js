@@ -1,6 +1,6 @@
 const Logs =(require('../models/captainModel'))
 const ships = require('../models/captainData')
-
+const Comment = require('../models/commentsModel')
 
 module.exports.index = async(req,res)=>{
         try {
@@ -15,9 +15,9 @@ module.exports.index = async(req,res)=>{
 
 module.exports.show = async (req, res) => {
     try {
-        const logs = await Logs.findById(req.params.id)
-        console.log(logs)
-        res.render('logs/Show', { logs: logs })
+        const logsData = await Logs.findById(req.params.id).populate('comments')
+        console.log(logsData)
+        res.render('logs/Show', { logs: logsData })
     } catch (err) {
         console.log(err)
         res.send(err.message)
@@ -86,6 +86,7 @@ module.exports.update = async (req,res)=>{
 }
 module.exports.clear = async (req, res) => {
     try {
+        await Comment.deleteMany({})
         await Logs.deleteMany({})
         res.redirect('/logs')
     } catch (err) {
@@ -105,3 +106,30 @@ module.exports.seed = async (req,res) => {
         res.send(err.message)
     }
 }
+
+ module.exports.createComment = async (req,res) =>{
+    const commentOne = {
+        username : req.body.username,
+        text : req.body.text,
+        createdAt : Date.now()
+    }
+    try{
+        const commentData = await Comment.create(commentOne)
+        console.log("Logs Comment created")
+        try{
+            await Logs.findByIdAndUpdate(
+                req.params.id,
+                {$push:{comments : commentData._id}},
+                {new:true, useFindAndModify : false}
+            )
+            res.redirect(`/logs/${req.params.id}`)
+        }catch(err){
+            console.log(err)
+        res.send(err.message)
+        }
+
+    }catch(err){
+        console.log(err)
+    res.send(err.message)
+    }
+ }

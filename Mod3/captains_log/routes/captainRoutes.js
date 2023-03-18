@@ -13,6 +13,7 @@ router.put('/:id',captainController.update)
 router.post('/',captainController.create)
 router.get('/:id/edit',captainController.edit)
 router.get('/:id',captainController.show)
+router.post('/:id/comment',captainController.createComment)
 
 
 

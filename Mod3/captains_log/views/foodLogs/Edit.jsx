@@ -21,6 +21,8 @@ function Edit(props) {
                         <br /><br /><br />
                         <input type="submit" />
                     </form>
+                    <br /><br /><br />
+                    <a href="/foodlogs">BACK</a>
                 </div>
             </div>
         </DefaultLayout>
