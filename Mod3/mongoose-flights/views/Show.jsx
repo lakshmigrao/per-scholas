@@ -90,49 +90,6 @@ function Show(props) {
                 
 
 </div>
-            {/* <div className="newFlights">
-            <p>Airline : {props.flight.airline} Airlines </p>
-            <p>Flight Number : {props.flight.flightNo}</p>
-            <p>Originating Airport : {props.flight.airport} </p>
-            <p>Departs on : <spanb>{props.flight.departs.toISOString().slice(0, 16).replace('T', ' ')}</spanb> </p>
-
-            {props.flight.destinations.length ?
-                <>
-
-                    {props.flight.destinations.map((item, index) =>
-                        <>
-                           
-                                <div><p>Destination Airport : <spanb>{item.airport}</spanb></p></div>
-                                <div><p>Arrival Time : <spanb>{item.arrival?.toISOString().slice(0, 16).replace('T', ' ')}</spanb></p></div>
-                    
-                        </>
-                    )}
-                    <form action={`/flights/${props.flight._id}/new`}>
-                        <br></br><br></br>
-                        {props.flight.airportsList.length? <button>Add New Destination</button>: ''}
-                    </form>
-                </>
-                :
-                <>
-                    <form action={`/flights/${props.flight._id}/destinations`} method="POST">
-                        <label htmlFor="air" className="form-label"><p>Destination Aiports to choose from  :</p></label>
-                        <select className="form-select" id="airp" name="airport" defaultValue={props.airport} >
-                            {props.flight.airportsList.map((item, index) => (
-
-                                <option key={index}>{item}</option>
-
-                            ))}
-                        </select>
-                        <label htmlFor="arrTime"><p>Arrival Time :</p> </label>
-                        <input type="datetime-local" id="arrTime" name="arrival" />
-                        <br></br>
-                        <input type="submit" value="ADD DESTINATION" />
-                    </form>
-
-                </>
-            }
-            <br></br>
-            </div> */}
         </DefaultLayout>
      
     )
