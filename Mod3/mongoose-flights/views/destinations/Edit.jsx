@@ -12,7 +12,7 @@ let selDest = ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
         <DefaultLayout>
         <form action={`/flights/${props.flightId}/edit/${props.destinations._id}?_method=PUT`} method="POST">
         {/* //<form action={`/flights/${props.flight._id}/destinations`} method="POST"> */}
-                <label htmlFor="airp" className="form-label"><h2>Destination Aiports to choose from  :</h2></label>
+                <label htmlFor="airp" className="form-label"><h3><spanb>Destination Aiports to choose from  :</spanb></h3></label>
                 <select className="form-select" id="airp" name="airport" defaultValue={props.flight.airport} >
                         {props.flight.airportsList.map((item,index) => (
 
@@ -20,12 +20,12 @@ let selDest = ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
 
                        ))}
                             </select>
-                            <label htmlFor="arrTime"><h2>Arrival Time :</h2> </label>
+                            <label htmlFor="arrTime"><h3><spanb>Arrival Time : </spanb></h3> </label>
                             <input type="datetime-local" id="arrTime" name="arrival" defaultValue={props.destinations.arrival?.toISOString().slice(0, 16)} />
-                    <input type="submit"/>
+                    <input type="submit" value="Save Changes"/>
                 </form>
                 <br></br><br></br>
-                <a href={`/flights/${props.flightId}`}>Back</a>
+                <a href={`/flights/${props.flightId}`}><h2>Back</h2></a>
                 </DefaultLayout>
     )
 

@@ -23,7 +23,7 @@ function Show(props) {
                         <th>Departs At</th>
                         <th>Arrival </th>
                         <th>Arrives At</th>
-                        {/* <th> </th> */}
+                        <th colSpan={'2'}> </th>
                     </tr>
                     
                     
