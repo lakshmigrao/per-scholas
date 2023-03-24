@@ -39,6 +39,7 @@ function Show(props) {
 
                             {props.flight.destinations.map((item, index) =>
                             //    <form key={index} action={`/flights/${props.flight._id}/edit/${item._id}`} method="GET">
+                            <form key={index} action={`/flights/${props.flight._id}/edit/${item._id}?_method=DELETE`} method="POST">
                                     <tr>
                                     <td>{props.flight.airline} Airlines</td>
                                     <td>{props.flight.flightNo}</td>
@@ -46,22 +47,26 @@ function Show(props) {
                                     <td>{props.flight.departs.toISOString().slice(0, 16).replace('T', ' ')}</td>
                                     <td>{item.airport}</td>
                                     <td>{item.arrival?.toISOString().slice(0, 16).replace('T', ' ')}</td>
+                                    <td><button>Delete</button> </td> 
                                     {/* <td><button>Edit Destination Details</button> </td> */}
                                     </tr>
-                               
+                                    </form>
                                 // </form> 
                                 
                             )}
-                            <form action={`/flights/${props.flight._id}/new`}>
-                        <br></br><br></br>
-                        {props.flight.airportsList.length? <button>Add New Destination</button>: ''}
-                    </form>
                             
                         </>
                         :
-                        <>
-                            <form className="Dest" action={`/flights/${props.flight._id}/destinations`} method="POST">
-                                <p><strong>Departure Aiport : </strong>{props.flight.airport}</p>
+                        ''
+                    }
+                    <br></br>
+              
+                </table>
+                {props.flight.airportsList.length!==0 ?
+                <details>
+                        <summary style={{ opacity: '.5' }}><strong>Add a destination : </strong></summary>
+                        <form action={`/flights/${props.flight._id}/destinations`} method="POST">
+                        <p><strong>Departure Aiport : </strong>{props.flight.airport}</p>
                                 <p><strong>Departs at : </strong>{props.flight.departs.toISOString().slice(0, 16).replace('T', ' ')}</p>
                                 <label htmlFor="air" className="form-label"><p><strong>Destination Aiports to choose from  :</strong></p></label>
                                 <select className="form-select" id="airp" name="airport" defaultValue={props.airport} >
@@ -76,14 +81,12 @@ function Show(props) {
                                 <input type="datetime-local" id="arrTime" name="arrival" />
                                 <br></br><br></br><br></br>
                                 <input type="submit" value="ADD DESTINATION" />
-                            </form>
-
-                        </>
+                            {/* <button>Add Destination</button> */}
+                        </form>
+                    </details>
+                    :
+                    ''
                     }
-                    <br></br>
-              
-        
-                </table>
                 
 
 </div>

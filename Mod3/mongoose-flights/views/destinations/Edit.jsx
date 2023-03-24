@@ -2,7 +2,7 @@ import React from "react";
 import DefaultLayout from "../layouts/DefaultLayout";
 
 function Edit(props){
-console.log(props.destinations)
+console.log("inside"+props.destinations)
 // let ex = document.getElementsByTagName('select');
 // let str = ex.options[ex.selectedIndex].value;
 // console.log(str)

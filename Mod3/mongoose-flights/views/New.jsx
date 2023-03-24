@@ -8,7 +8,7 @@ function New(props) {
    // setAirports(selDest)
     return (
         <DefaultLayout>
-            <div className="newFlights center">
+            <div className="newFlights newpage">
                 <h1>Add A New Flight</h1>
                 {/* style={{ fontSize: "1.5em" }} */}
                 <form  action="/flights" method="POST">

@@ -1,9 +1,9 @@
-/* *{
-   display: flex;
-   flex-wrap: wrap;
-} */
+body{
+  background-image: url(./planeimage2.jpg)
+
+}
 nav{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     background-color: blanchedalmond;
     display: flex;
     flex-wrap: row wrap;
@@ -11,8 +11,8 @@ nav{
     color: white;
     padding: 10px;
     font-size: 1.5em;
-    border-radius: 20px;
-    width: 500px;
+    /* border-radius: 20px; */
+    width: 100%;
     
 }
 span{
@@ -95,9 +95,9 @@ spanb{
     margin: 0 auto;
   } */
 
-  .center{
+  .newpage{
     border: 1px solid blue;
-margin-left: 350px;
+margin-left: 100px;
 margin-top: 50px;
 width: 400px;
 padding: 20px;

@@ -13,14 +13,14 @@ router.delete('/clear',flightController.clear)
 
 router.post('/',flightController.create)
 
-router.get('/:id',flightController.show)
+
 
 router.post('/:id/destinations',flightController.createDestinations)
 router.get('/:id/new',flightController.addDests)
 router.get('/:id/edit/:desid',flightController.editDestinations)
-
+router.delete('/:id/edit/:desid',flightController.deleteDestination)
 router.put('/:id/edit/:desid',flightController.updateDestinations)
-
+router.get('/:id',flightController.show)
 
 
 module.exports = router
