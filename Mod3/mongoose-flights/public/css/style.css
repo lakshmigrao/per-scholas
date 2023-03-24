@@ -1,6 +1,6 @@
 body{
-  background-image: url(./planeimage2.jpg)
-
+  background-image: url(./planeimage2.jpg);
+background-size: cover;
 }
 nav{
     /* border: 2px solid blue; */
@@ -48,10 +48,12 @@ spanb{
     padding : 10px;
     border-radius: 15px;
     width : 250px;
+    height: 70px;
     display: inline-block;
     /* display: flex;
    flex-flow: column wrap; */
    transition: .5s ease;
+   text-align: center;
 }
 .newFlight:hover{
     /* border-radius:15%; */

@@ -68,7 +68,33 @@ module.exports.show = async (req, res) => {
         res.send(err.message)
     }
 }
+module.exports.updateDestinations = async (req, res) => {
 
+    try {
+        // console.log(req.body)
+        // console.log(req.params.desid)
+       // console.log("inside updatedestination")
+        const destination = await Destinations.findById(req.params.desid)
+        const oldSelection = destination.airport
+        await Destinations.findByIdAndUpdate(req.params.desid, req.body)
+        const flight = await Flights.findById(req.params.id)
+        //console.log("old oldSelection "+oldSelection)
+        let arr = flight.airportsList
+       // console.log("old flight.airportsList "+flight.airportsList)
+        let index = arr.indexOf(req.body.airport)
+        arr.splice(index, 1)
+        arr.push(oldSelection)
+        //console.log("new arr"+arr)
+        await Flights.findByIdAndUpdate(req.params.id, { airportsList: arr })
+       // console.log("new flight.airportsList "+flight.airportsList)
+       // console.log("new oldSelection "+oldSelection)
+        res.redirect(`/flights/${req.params.id}`)
+    } catch (err) {
+        console.log(err.message)
+        res.send(err.message)
+
+    }
+}
 // module.exports.updateDestinations = async(req,res) => {
 
 //     try{
@@ -105,31 +131,31 @@ module.exports.show = async (req, res) => {
 
 //     }
 // }
-module.exports.updateDestinations = async (req, res) => {
+// module.exports.updateDestinations = async (req, res) => {
 
-    try {
-        // console.log(req.body)
-        // console.log(req.params.desid)
-        let destinations = await Destinations.findById(req.params.desid)
-        await Flights.findByIdAndUpdate(req.params.id, {
-            $pull: {
-                airportsList: destinations.airport
-            }
-        })
-     destinations = await Destinations.findByIdAndUpdate(req.params.desid, req.body)
-        // await Flights.findByIdAndUpdate(req.params.id, {
-        //     $push: {
-        //         airportsList: req.body.airport
-        //     }
-        // })
-        console.log(destinations)
-        res.redirect(`/flights/${req.params.id}`)
-    } catch (err) {
-        console.log(err.message)
-        res.send(err.message)
+//     try {
+//         // console.log(req.body)
+//         // console.log(req.params.desid)
+//         let destinations = await Destinations.findById(req.params.desid)
+//         await Flights.findByIdAndUpdate(req.params.id, {
+//             $pull: {
+//                 airportsList: destinations.airport
+//             }
+//         })
+//      destinations = await Destinations.findByIdAndUpdate(req.params.desid, req.body)
+//         // await Flights.findByIdAndUpdate(req.params.id, {
+//         //     $push: {
+//         //         airportsList: req.body.airport
+//         //     }
+//         // })
+//         console.log(destinations)
+//         res.redirect(`/flights/${req.params.id}`)
+//     } catch (err) {
+//         console.log(err.message)
+//         res.send(err.message)
 
-    }
-}
+//     }
+// }
 
 module.exports.createDestinations = async (req, res) => {
     try {
@@ -162,12 +188,12 @@ module.exports.createDestinations = async (req, res) => {
 module.exports.editDestinations = async (req, res) => {
     const destinations = await Destinations.findById(req.params.desid)
     let flight = await Flights.findById(req.params.id)
-    console.log(destinations.airport)
-    flight = await Flights.findByIdAndUpdate(req.params.id, {
-        $push: {
-            airportsList: destinations.airport
-        }
-    })
+    // console.log(destinations.airport)
+    // flight = await Flights.findByIdAndUpdate(req.params.id, {
+    //     $push: {
+    //         airportsList: destinations.airport
+    //     }
+    // })
 
     res.render('destinations/Edit', { flightId: req.params.id, destinations, flight })
 

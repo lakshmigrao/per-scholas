@@ -38,8 +38,6 @@ function Show(props) {
                         <>
 
                             {props.flight.destinations.map((item, index) =>
-                            //    <form key={index} action={`/flights/${props.flight._id}/edit/${item._id}`} method="GET">
-                            <form key={index} action={`/flights/${props.flight._id}/edit/${item._id}?_method=DELETE`} method="POST">
                                     <tr>
                                     <td>{props.flight.airline} Airlines</td>
                                     <td>{props.flight.flightNo}</td>
@@ -47,12 +45,11 @@ function Show(props) {
                                     <td>{props.flight.departs.toISOString().slice(0, 16).replace('T', ' ')}</td>
                                     <td>{item.airport}</td>
                                     <td>{item.arrival?.toISOString().slice(0, 16).replace('T', ' ')}</td>
-                                    <td><button>Delete</button> </td> 
-                                    {/* <td><button>Edit Destination Details</button> </td> */}
-                                    </tr>
-                                    </form>
-                                // </form> 
-                                
+                                    <form key={index} action={`/flights/${props.flight._id}/edit/${item._id}?_method=DELETE`} method="POST">
+                                    <td><button>Delete</button> </td> </form>
+                                    <form key={index} action={`/flights/${props.flight._id}/edit/${item._id}`} method="GET">
+                                    <td><button>Edit </button> </td></form>
+                                    </tr>                               
                             )}
                             
                         </>

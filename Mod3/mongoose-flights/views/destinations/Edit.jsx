@@ -21,7 +21,7 @@ let selDest = ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
                        ))}
                             </select>
                             <label htmlFor="arrTime"><h2>Arrival Time :</h2> </label>
-                            <input type="datetime-local" id="arrTime" name="arrival" defaultValue={props.destinations.arrival.toISOString().slice(0, 16)} />
+                            <input type="datetime-local" id="arrTime" name="arrival" defaultValue={props.destinations.arrival?.toISOString().slice(0, 16)} />
                     <input type="submit"/>
                 </form>
                 <br></br><br></br>
