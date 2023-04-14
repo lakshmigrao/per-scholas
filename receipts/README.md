@@ -1,5 +1,8 @@
 # Korilla Receipts
 
+This is a short order tracking system using React. Some sample receipts are being rendered.
+A click event on the receipt changes the value of paid from false to true. Once clicked the receipt immediately disappears from the browser view.
+
 Link to the app,
 
 https://korilla-receipts.onrender.com/
