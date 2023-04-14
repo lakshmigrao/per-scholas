@@ -4,6 +4,11 @@ Welcome to mongoose-flights app. This app is developed using MongoDB and Express
 
 https://mongoose-flights-vjyf.onrender.com/flights
 
+# Homepage of the mongoose-flights app
+
+![Homepage](/img/mongoose-flights-homepage.png) 
+
+
 # Following user stories are implemented.(AAU - As A User)
 
 - AAU, I want to view a list of all flights (index view) that displays each flight's airline, flight no., and departure date/time
@@ -28,6 +33,3 @@ https://mongoose-flights-vjyf.onrender.com/flights
 
 - When adding a destination for a flight, exclude the airports listed in the <select>that have already been used by other destinations and/or the flight's airport.
 
-# Homepage of the mongoose-flights app
-
-![Homepage](/img/mongoose-flights-homepage.png)
