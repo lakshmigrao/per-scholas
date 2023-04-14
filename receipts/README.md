@@ -1,3 +1,13 @@
+# Korilla Receipts
+
+Link to the app,
+
+https://korilla-receipts.onrender.com/
+
+Homepage is
+
+![Homepage](../receipts/src/img/homepage.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
