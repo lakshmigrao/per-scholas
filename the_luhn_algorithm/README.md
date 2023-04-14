@@ -1,3 +1,22 @@
+# Credit Card Validator using the Luhn Algorithm
+
+- A user enters a credit card in your form
+- If the Luhn Algorithm says its valid, show a message that the card is valid
+- If the Luhn Algorith says its invalid show a message that it is not valid
+- The Luhn Algo should be checking every time the state changes using the useEffect hook
+- Some card numbers to check :- 
+    - validCard(1234567890123456); //should be false
+    - validCard(4408041234567893); //should be true
+    - validCard(38520000023237); //should be true
+    - validCard(4222222222222); //should be true
+
+# Link to the Credit card validator
+
+https://the-luhn-algorithm.onrender.com/
+
+# Homepage 
+![Homepage](../the_luhn_algorithm/src/img/homepage.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
