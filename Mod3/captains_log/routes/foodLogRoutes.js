@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const foodLogsController = require('../controllers/foodLogs')
+const foodLogsController = require('../controllers/foodlogs')
 //!.N.D.U.C.E.S
 router.get('/',foodLogsController.index)
 router.get('/new',foodLogsController.new)
