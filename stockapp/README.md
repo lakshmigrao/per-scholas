@@ -1,3 +1,11 @@
+# Link to the stock app,
+
+https://stockapp-9ii8.onrender.com/stocks
+
+# Homepage
+
+![HomePage](../stockapp/src/img/homepage.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
