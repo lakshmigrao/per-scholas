@@ -16,7 +16,7 @@ module.exports.index=async(req,res) => {
 
 module.exports.new = async(req,res) => {
 
-   res.render('foodlogs/New')
+   res.render('foodLogs/New')
 
 }
 
@@ -42,7 +42,7 @@ module.exports.show = async (req,res) => {
     try{
         const foodLogData = await FoodLogs.findById(req.params.id).populate('comments')
         console.log(foodLogData)
-        res.render('foodlogs/Show',{foodlog : foodLogData})
+        res.render('foodLogs/Show',{foodlog : foodLogData})
     }catch(err){
         console.log(err)
         res.send(err.message)
@@ -52,7 +52,7 @@ module.exports.show = async (req,res) => {
 module.exports.edit = async (req,res) => {
     try{
         const foodLogData = await FoodLogs.findById(req.params.id)
-        res.render('foodlogs/Edit',{foodlog :foodLogData})
+        res.render('foodLogs/Edit',{foodlog :foodLogData})
     }catch(err){
         console.log(err)
         res.send(err.message)

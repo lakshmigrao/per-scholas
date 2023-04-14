@@ -8,7 +8,7 @@ function New() {
               <h1>NEW VIEW FOODLOGS</h1>
         <div className="containerA">
       
-            <form action="/foodLogs" method="POST">
+            <form action="/foodlogs" method="POST">
 
                 <label htmlFor="ttl">Title : </label>
                 <input type="text" id="ttl" name="title" />
@@ -22,7 +22,7 @@ function New() {
                 <input type="submit"/>
             </form>
             <br/><br/><br/>
-            <a href="/foodLogs">BACK</a>
+            <a href="/foodlogs">BACK</a>
         </div>
         </DefaultLayout>
     )

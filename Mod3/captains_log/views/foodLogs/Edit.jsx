@@ -8,7 +8,7 @@ function Edit(props) {
             <div>
                 <h1>FOOD LOGS EDIT VIEW</h1>
                 <div className="containerA">
-                    <form action={`/foodLogs/${props.foodlog._id}?_method=PUT`} method="POST">
+                    <form action={`/foodlogs/${props.foodlog._id}?_method=PUT`} method="POST">
 
                         <label htmlFor="ttl">Title :  </label>
                         <input type="text" id="ttl" name="title" defaultValue={props.foodlog.title} />
@@ -22,7 +22,7 @@ function Edit(props) {
                         <input type="submit" />
                     </form>
                     <br /><br /><br />
-                    <a href="/foodLogs">BACK</a>
+                    <a href="/foodlogs">BACK</a>
                 </div>
             </div>
         </DefaultLayout>

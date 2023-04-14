@@ -20,13 +20,13 @@ function Show(props) {
                 </div>
                 <div className="containerB">
                     <br /> <br /> <br />
-                    <a href="/foodLogs">Back</a>
+                    <a href="/foodlogs">Back</a>
                     <br /> <br /> <br />
 
-                    <a href={`/foodLogs/${props.foodlog._id}/edit`}>Edit</a>
+                    <a href={`/foodlogs/${props.foodlog._id}/edit`}>Edit</a>
                     <br /> <br /> <br />
 
-                    <form action={`/foodLogs/${props.foodlog._id}?_method=DELETE`} method="POST">
+                    <form action={`/foodlogs/${props.foodlog._id}?_method=DELETE`} method="POST">
 
                         <button>DELETE</button>
                     </form>
@@ -40,7 +40,7 @@ function Show(props) {
                     </>):<h2>No Comments</h2>}
                 </div>
                 <div className="containerD">
-                <form action={`/foodLogs/${props.foodlog._id}/comment`} method="POST">
+                <form action={`/foodlogs/${props.foodlog._id}/comment`} method="POST">
                         <label htmlFor="usr">Username : </label>
                         <input type="text" id="usr" name="username" />
                         <br /><br /><br />
