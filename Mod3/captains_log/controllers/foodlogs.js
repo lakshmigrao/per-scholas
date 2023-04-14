@@ -6,7 +6,7 @@ module.exports.index=async(req,res) => {
 
     try{
         const foodLogData = await FoodLogs.find()
-        res.render('foodlogs/Index',{foodLog : foodLogData})
+        res.render('foodLogs/Index',{foodLog : foodLogData})
 
     }catch(err){
         console.log(err)
