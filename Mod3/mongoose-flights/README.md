@@ -6,7 +6,7 @@ https://mongoose-flights-vjyf.onrender.com/flights
 
 # Homepage of the mongoose-flights app
 
-![Homepage](/img/mongoose-flights-homepage.jpg) 
+![Homepage](../../Mod3/mongoose-flights/img/mongoose-flights-homepage.jpg) 
 
 
 # Following user stories are implemented.(AAU - As A User)
