@@ -27,3 +27,7 @@ https://mongoose-flights-vjyf.onrender.com/flights
 - Sort the list of destinations for a flight by the arrivaldate/time in ascending order.
 
 - When adding a destination for a flight, exclude the airports listed in the <select>that have already been used by other destinations and/or the flight's airport.
+
+# Homepage of the mongoose-flights app
+
+![Homepage](/img/mongoose-flights-homepage.png)
