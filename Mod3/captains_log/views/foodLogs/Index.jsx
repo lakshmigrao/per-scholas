@@ -13,22 +13,22 @@ function Index(props){
             <ul>
             {props.foodLog.map((item,index) =>
             <li key={index}>
-               <a href={`/foodlogs/${item._id}`}> {item.title}</a>
+               <a href={`/foodLogs/${item._id}`}> {item.title}</a>
             </li>
 
             )}</ul></div>
 
             
             <div className="containerB">
-            <a href="/foodlogs/new">ADD</a>
+            <a href="/foodLogs/new">ADD</a>
             <br/><br/><br/>
             <a href="/"> BACK</a>
             <br /><br /><br />
-            <form action="/foodlogs/seed" method="POST">
+            <form action="/foodLogs/seed" method="POST">
                 <button>SEED</button>
             </form>
             <br /><br /><br />
-            <form action="/foodlogs/clear?_method=DELETE" method="POST">
+            <form action="/foodLogs/clear?_method=DELETE" method="POST">
                 <button>CLEAR</button>
             </form>
             
