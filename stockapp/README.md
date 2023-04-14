@@ -1,6 +1,6 @@
 # Link to the stock app,
 
-https://stockapp-9ii8.onrender.com/stocks
+https://stockapp-9ii8.onrender.com/
 
 # Homepage
 
